@@ -1,0 +1,25 @@
+if className=="A":
+        thread = threading.Thread(target=sendcmd,args=(client,"1"))
+        thread.start()
+    elif className=="D" :
+        thread = threading.Thread(target=sendcmd,args=(client,"0"))
+        thread.start()
+    elif className=="C" :
+        thread = threading.Thread(target=sendalert,args=(client,"Please give water /nid=111"))
+        print('mobile alert')
+        thread.start()
+    elif className=="B" :
+        thread = threading.Thread(target=sendalert,args=(client,"nature call"))
+        print('mobile alert')
+        thread.start()
+    elif className=="E" :
+        thread = threading.Thread(target=sendalert,args=(client,"Panic"))
+        print('mobile alert')
+        thread.start()
+
+
+def sendalert(client,msg):
+    print('mobile alert')
+    msgdata = "{\"title\":\"Help\" , \"body\":\"" + msg + "\"}"
+    print(msgdata)
+    client.publish("handgesture1",msgdata)
