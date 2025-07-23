@@ -66,3 +66,67 @@ Many patients with limited mobility or speech struggle to convey their needs. Th
           → [MQTT Publish] → [HiveMQ Broker]
               → [Flutter App Notification]
               → [NodeMCU IoT Device Control]
+
+
+## 📦 Installation
+
+```bash
+# 1. Python Backend (Gesture Detection)
+pip install opencv-python mediapipe tensorflow paho-mqtt
+python gesture_mqtt_sender.py
+
+# 2. IoT Hardware Setup
+# - Flash ESP8266 NodeMCU with Arduino code
+# - Connect relay module to control appliances
+# - Subscribe to topic "handgesture1"
+
+# 3. Flutter App
+flutter pub get
+flutter run
+```
+
+---
+
+## 🧪 Testing
+
+```text
+Gesture | Action           | Result
+--------|------------------|---------
+A       | Emergency        | Passed ✅
+B       | Give Water       | Passed ✅
+C       | Nature Call      | Passed ✅
+D       | Turn ON Device   | Passed ✅
+E       | Turn OFF Device  | Passed ✅
+```
+
+---
+
+## 📈 Future Enhancements
+
+```diff
+- Extend gesture vocabulary
+- Personalize gesture mapping per patient
+- Add voice fallback
+- Support wearable-based gesture recognition
+- Advanced ML models for high accuracy
+```
+
+---
+
+## 👨‍💻 Authors
+
+```csharp
+Shridhar K Dhavaleshwar (4SU22AD402)
+Mahantesh Sankanagoudra
+Nitish Terdal
+Shashank Sasalatti
+Guided by: Mr. Padma Prasada, Assistant Professor, SDMIT
+```
+
+---
+
+## 📜 License
+
+```vbnet
+This project is part of academic submission to Visvesvaraya Technological University (VTU) and may be reused for educational and research purposes.
+```
